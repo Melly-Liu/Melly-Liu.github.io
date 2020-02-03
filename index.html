@@ -64,6 +64,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Something-about-python" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/03/Something-about-python/" class="article-date">
+  <time datetime="2020-02-03T09:11:41.000Z" itemprop="datePublished">2020-02-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/03/Something-about-python/">Something about python</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>First, I want to talk about how I feel about learning python during this time.I was not very good at this course, and before that I was even a ‘ computer idiot ‘’. I only have the VB of high school computer science  course before which was collected to the programming. However, after such a long study, I found that computer programming was not as horrible and difficuit as I had imagined, since every step of the process was closely linked and traceable. Gradually, I could understand and deduce the final formula step by step. Anyway, I hope I can make greater gains in the following python language learning.</p>
+<p>So, what is python?</p>
+<p>It is a large heavy-bodied nonvenomous snake occurring throughout the Old World tropics, killing prey by constriction and asphyxiation.</p>
+<p>(computing)</p>
+<p>a high-level general-purpose programming language.</p>
+<p>Second, what python can do?</p>
+<p>Python can be used on a server to create web applications.<br>Python can be used alongside software to create work flows.<br>Python an connect to database systems. It can also read and modify files.<br>Python can be used to handle big data and perform complex mathematics.<br>Python can be used for rapid prototyping or for production-ready software development.</p>
+<p>Here are sone specific examples</p>
+<ol>
+<li><p>Write a Python program to convert a list of multiple integers into <strong>a single integer</strong>.</p>
+<p>Sample list: [11, 33, 50]</p>
+<p>Expected Output: 113350</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">result&#x3D;[] #result是一个list</span><br><span class="line">spam&#x3D;[11,33,50]</span><br><span class="line">for i in range(len(spam)):</span><br><span class="line">      result&#x3D;result+str(spam[i]) </span><br><span class="line">      print(result)</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">----&gt; result&#x3D;result+str(spam[i]) </span><br><span class="line">TypeError: can only concatenate list (not &quot;str&quot;) to list</span><br><span class="line">#错误提示：str(spam[i])是str，不能直接与result这个list相加</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">result&#x3D;&#39;&#39; #result是个str</span><br><span class="line">spam&#x3D;[11,33,50]</span><br><span class="line">for i in range(len(spam)):</span><br><span class="line">    result&#x3D;result+str(spam[i])</span><br><span class="line">print(result)</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">113355</span><br><span class="line">#错误提示：虽然代码跑通了，输出结果看上去也是对的，但依旧不符合题目要求（result此时的形式是str，并非int）</span><br><span class="line"></span><br><span class="line">#修改方法：把最后一步 print(result) 改为 print(int(result))</span><br></pre></td></tr></table></figure>
+
+<p>我们也可以把列表中每一个值取出为str 再一个个相加 转int</p>
+<h3 id="用del语句从列表中删除值"><a href="#用del语句从列表中删除值" class="headerlink" title="用del语句从列表中删除值"></a>用del语句从列表中删除值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spam&#x3D;[&#39;cat&#39;,&#39;rat&#39;, &#39;bat&#39;,&#39;elephant&#39;]</span><br><span class="line">for i in range(len(spam)):</span><br><span class="line">    del spam[i]</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">----&gt; del spam[i]</span><br><span class="line">IndexError: list assignment index out of range</span><br></pre></td></tr></table></figure>
+
+<p>delete和for循环最好不要一起使用，因为spam的长度在每次删除之后都会变</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><blockquote>
+<p>list.index( ) 在列表中查找值</p>
+<p>list.append( ) 在列表末尾添加参数</p>
+<p>list.insert( ) 在列表任意下标处添加参数</p>
+<p>list.remove( ) 在列表中删除 一个具体的值  #ps: 如果不知道列表具体的值 知道下标的话就用del语句</p>
+<p>list.sort( ) 将列表值按American Standard Code for Information Interchange (ascii码)进行排列</p>
+<p>（摘自Al Sweigart的Python编程快速上手–让繁琐工作自动化）</p>
+</blockquote>
+<p>除了第一个方法index( )是查看一个值在列表中的下标之外，其余方法在以 “列表名.方法名 ( )”  的形式被调用后可以直接修改列表 （以append（）为例）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spam&#x3D;[&#39;rat&#39;,&#39;bat&#39;,&#39;cat&#39;]</span><br><span class="line">spam.append(&#39;cat&#39;)</span><br><span class="line">spam</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">[&#39;rat&#39;, &#39;bat&#39;, &#39;cat&#39;, &#39;cat&#39;]</span><br></pre></td></tr></table></figure>
+
+<p>但要注意不能写成 “列表名=列表名.方法名” </p>
+<p>因为这是在把你所使用方法( append( ) )的返回值 赋给之前的列表名，所以当我们再次查看列表名的值的时候 会得到None这个结果（方法的返回值）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spam&#x3D;[&#39;rat&#39;,&#39;bat&#39;,&#39;cat&#39;]</span><br><span class="line">spam&#x3D;spam.append(&#39;cat&#39;)</span><br><span class="line">print(spam)</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">None</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="补充sort-的用法"><a href="#补充sort-的用法" class="headerlink" title="补充sort( )的用法"></a>补充sort( )的用法</h3><ol>
+<li>如果列表中既有str这种数据类型，也有int这种数据类型，Python会无法比较不同的值对他们进行排序</li>
+<li>list.sort ( ) 将列表值按ascii码进行排列  顺序为：数字、大写字母、小写字母</li>
+<li>list.sort (reverse=True) 按ascii码逆序排序 顺序为：小写字母、大写字母、数字</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/03/Something-about-python/" data-id="ck66kd7u4000020u571qd73nr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Markddown语法介绍" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/02/Markddown%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D/" class="article-date">
@@ -462,6 +544,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/02/03/Something-about-python/">Something about python</a>
+          </li>
         
           <li>
             <a href="/2020/02/02/Markddown%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D/">Markdown语法介绍</a>
